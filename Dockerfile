@@ -1,11 +1,7 @@
 FROM php:8.3-fpm-alpine
 
 # Install dependencies
-RUN apk --no-cache add bash git curl nginx wget dpkg \
-    openssh-client ca-certificates \
-    libxml2-dev libzip-dev libpng-dev libjpeg-turbo-dev \
-    ldb-dev \
-    $PHPIZE_DEPS
+RUN apk --no-cache add bash git curl nginx wget dpkg
 
 # Add PHP extensions
 ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
